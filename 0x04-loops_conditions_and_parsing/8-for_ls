@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
-#script that gives you information about the school file.
-
-file="school"
-
-if [ -e "$file" ]; then
-    echo "school file exists"
-    
-    if [ -s "$file" ]; then
-        echo "school file is not empty"
-    else
-        echo "school file is empty"
+#script that displays:The content of the current directory In a list format 
+for file in *
+do
+    if [[ ! "$file" == .* && "$file" == *-* ]]
+    then
+        name=$(echo "$file" | cut -d '-' -f 2-)
+        echo "$name"
     fi
-    
-    if [ -f "$file" ]; then
-        echo "school is a regular file"
-    fi
-else
-    echo "school file does not exist"
-fi
+done
