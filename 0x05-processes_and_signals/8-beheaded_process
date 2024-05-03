@@ -8,3 +8,4 @@ if pgrep -x "7-highlander" >/dev/null; then
 else
     echo "Process 7-highlander is not running."
 fi
+
