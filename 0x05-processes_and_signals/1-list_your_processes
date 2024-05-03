@@ -3,22 +3,4 @@
 
 echo "PID   PPID  USER      CMD"
 
-display_process_tree() {
-    local pid=$1
-    local level=$2
-
-    read pid ppid user cmd < <(ps -o pid= -o ppid= -o user= -o cmd= -p $pid)
-
-    printf "%-6s%-6s%-10s%s%s\n" "$pid" "$ppid" "$user" "$level" "$cmd"
-
-    local children=$(ps -o pid= --ppid $pid)
-    for child_pid in $children; do
-        display_process_tree $child_pid "|-- $level"
-    done
-}
-
-root_pids=$(ps -eo pid= --ppid 1)
-
-for root_pid in $root_pids; do
-    display_process_tree $root_pid ""
-done
+ps -a -x -u -f
