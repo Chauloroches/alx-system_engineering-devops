@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # script that displays a list of currently running processes.
 
-echo "PID   PPID  USER      CMD"
-
 ps -a -x -u -f
