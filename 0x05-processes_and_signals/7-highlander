@@ -1,11 +1,9 @@
-#!/usr/bin/env bass
-# Bash script that displays:
-# To infinity and beyond indefinitely
-# With a sleep 2 in between each iteration
-# I am invincible!!! when receiving a SIGTERM signal
+#!/usr/bin/env bash
+# Bash script that displays:To infinity and beyond indefinitely,With a sleep 2 in between each iteration,I am invincible!!! when receiving a SIGTERM signal
 
-trap 'echo "I am invincible!!!"' 15
-while true;do
-	echo "to infinity and beyond"
+trap 'echo "I am invincuble!!!!' 15
+while true; do
+	echo "to infinity abd beyong"
 	sleep 2
 done
+
