@@ -4,9 +4,15 @@
 if[$# -eq 0]; then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 	exit
-elif[$# -gt 1]; then
-	echo"Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-	exit
-else
-	ping "$1" -c 5
 fi
+
+IP_ADDRESS=$1
+
+ping -c 5 $IP_ADDRESS | while read line; do
+	if [[ $line == *"time="* ]]; then
+		time=$(echo $line | grep -oP '(?<=time=)[0-9.]+')
+        	echo "Round-trip time: $time ms"
+	if
+	echo "$line"
+done
+
