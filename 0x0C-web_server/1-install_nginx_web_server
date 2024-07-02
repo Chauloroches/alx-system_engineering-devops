@@ -2,10 +2,10 @@
 #Install nginx web server
 sudo apt-get update && sudo apt-get install nginx
 
-# Start nginx
+# Start nginx service
 sudo service nginx start
 
-# Index.html with "Hello World!"
+# Create index.html with "Hello World!"
 sudo touch /var/www/html/index.html
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
