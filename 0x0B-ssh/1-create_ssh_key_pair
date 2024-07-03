@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Bash script that creates an RSA key pair.
+
+Host *
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
