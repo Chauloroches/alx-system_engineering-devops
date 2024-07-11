@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
-apt-get update -y
-apt-get install -y nginx
-sudo service nginx enable
-sudo service nginx start
+rm /etc/nginx/sites-enabled/default
+in -s /etc/nginx/sites-available/default/etc/nginx/sites-enabled/default
+service nginx restart
